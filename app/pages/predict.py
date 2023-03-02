@@ -24,27 +24,27 @@ add_bg_from_url()
 st.title("Please enter the details to see if the customer will churn or not")
 
 # User input
-total_trans_ct = st.number_input('Enter the total transaction count', min_value=0, max_value=200)
+total_trans_ct = st.number_input('Total transaction count', min_value=0, max_value=200)
 
-total_trans_amt = st.number_input('Enter the total transaction amount', min_value=0, max_value=30000) # 20 = High probability to churn, 80 = Low probability to churn
+total_trans_amt = st.number_input('Total transaction amount', min_value=0, max_value=30000) # 20 = High probability to churn, 80 = Low probability to churn
 
 total_revolving_bal=st.number_input('Total revolving balance', min_value=0, max_value=4000, key="total_revolving_bal")
 
 tac_Q4_Q1=st.number_input('Total amount change from quarter 4 to quarter 1', min_value=0.0, max_value=4.0, step=0.05)
 
-tcc_Q4_Q1= st.number_input('Total ct change from quarter 4 to quarter 1', min_value=0.0, max_value=4.0, step=0.05)
+tcc_Q4_Q1= st.number_input('Change in transaction count from quarter 4 to quarter 1', min_value=0.0, max_value=4.0, step=0.05)
 
 trc= st.select_slider('Number of products at the bank:', [1,2,3,4,5,6], key="trc")
 
 months_inactive= st.select_slider("Months of inactivity in previous year", [0,1,2,3,4,5,6], key="months_inactive")
 
-contacts_count= st.select_slider("How many times contacted in previous year:", [0,1,2,3,4,5,6], key="contacts_count")
+contacts_count= st.select_slider("How many times contacted in previous year", [0,1,2,3,4,5,6], key="contacts_count")
 
-age= st.slider("What's the customer's age:", 18,100, key="age")
+age= st.slider("Customer's age", 18,100, key="age")
 
-credit=st.slider("Credit limit:", 1000, 40000, key="credit")
+credit=st.slider("Credit limit", 1000, 40000, key="credit")
 
-mob= st.slider("Months on book:", 12, 60, key="mob")
+mob= st.slider("Months on book", 12, 60, key="mob")
 
 # Loading the model
 model_xgb = xgb.XGBClassifier()

@@ -40,5 +40,3 @@ st.write("This website is designed to help banks predict which customers are lik
 st.write("Our user-friendly interface makes it easy for you to make predictions with just a few clicks, and our advanced algorithms will provide you with accurate insights and recommendations on how to keep your customers engaged and satisfied. With Churn Halt, you can reduce customer churn, improve customer loyalty, and ultimately increase your revenue.")
 st.write("In addition, we've created a separate page where you can visualize the data using Tableau Public. Here, you can explore the patterns and trends in customer behavior and gain deeper insights into the factors that drive customer churn.")
 st.write("So, whether you're a small credit union or a large multinational bank, Churn Halt can help you take control of your customer retention strategy and improve your bottom line. Let's get started!")
-# selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
-# page_names_to_funcs[selected_page]()
