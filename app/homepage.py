@@ -1,21 +1,21 @@
 import streamlit as st
 
-def homepage():
+def Homepage():
     st.markdown("# Churn Halt ")
     st.sidebar.markdown("# Churn Halt")
 
-def predict():
+def Predict():
     st.markdown("# Churn prediction ")
     st.sidebar.markdown("# Churn prediction ")
 
-def tableau():
+def Tableau():
     st.markdown("# Tableau ")
     st.sidebar.markdown("# Tableau ")
 
 page_names_to_funcs = {
-    "Main Page": homepage,
-    "Page 2": predict,
-    "Page 3": tableau,
+    "Main Page": Homepage,
+    "Page 2": Predict,
+    "Page 3": Tableau,
 }
 
 def add_bg_from_url():

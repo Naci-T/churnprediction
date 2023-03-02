@@ -24,7 +24,6 @@ add_bg_from_url()
 st.title("Please enter the details to see if the customer will churn or not")
 
 # User input
-
 total_trans_ct = st.number_input('Enter the total transaction count', min_value=0, max_value=200)
 
 total_trans_amt = st.number_input('Enter the total transaction amount', min_value=0, max_value=30000) # 20 = High probability to churn, 80 = Low probability to churn
@@ -48,26 +47,16 @@ credit=st.slider("Credit limit:", 1000, 40000, key="credit")
 mob= st.slider("Months on book:", 12, 60, key="mob")
 
 # Loading the model
-model_xgb = xgb = xgb.XGBClassifier(
-    learning_rate=0.05,
-    max_depth=4,
-    min_child_weight=1,
-    n_estimators=500,
-    subsample=0.4331229815476772,
-    colsample_bytree=0.5242723167060505,
-    reg_lambda=7.049263425549493e-06,
-    reg_alpha=0.015123845878697514,
-)
+model_xgb = xgb.XGBClassifier()
 model_xgb.load_model("./model/xgbmodel.bin")
 
 # Make prediction: 
-
 user_input = pd.DataFrame([[total_trans_ct, total_trans_amt, total_revolving_bal, tac_Q4_Q1, tcc_Q4_Q1, trc, months_inactive, contacts_count, age, credit, mob]], columns=["Total_Trans_Ct","Total_Trans_Amt", "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1", "Total_Ct_Chng_Q4_Q1", "Total_Relationship_Count", "Months_Inactive_12_mon", "Contacts_Count_12_mon", "Customer_Age", "Credit_Limit", "Months_on_book"])
 prediction = model_xgb.predict_proba(user_input)
 
 if st.button("Predict"):
     churn_prob = round(prediction[0][1] * 100, 2)
     if churn_prob > 50:
-        st.error(f"This customer has a {churn_prob}% chance to churn")
+        st.error(f"This customer has a {churn_prob}% chance to churn.")
     else:
-        st.success(f"This customer has a {churn_prob}% chance to churn")
+        st.success(f"This customer has a {churn_prob}% chance to churn.")
