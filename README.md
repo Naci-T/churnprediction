@@ -7,4 +7,4 @@ This is a Streamlit app (https://bit.ly/churnhalt) for predicting customer churn
 # Model Used
 The model used in this app is an XGBoost classifier. It has been pre-trained and loaded from a saved model file. The model takes the user input as a Pandas DataFrame and uses the predict_proba() method to predict the probability of customer churn. 
 
-<img src="image/image_app.png" alt="app" width="500">
+<img src="image/image_app.png" alt="app" width="750">
