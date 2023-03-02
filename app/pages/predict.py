@@ -34,7 +34,7 @@ tac_Q4_Q1=st.number_input('Total amount change from quarter 4 to quarter 1', min
 
 tcc_Q4_Q1= st.number_input('Change in transaction count from quarter 4 to quarter 1', min_value=0.0, max_value=4.0, step=0.05)
 
-trc= st.select_slider('Number of products at the bank:', [1,2,3,4,5,6], key="trc")
+trc= st.select_slider('Number of products at the bank', [1,2,3,4,5,6], key="trc")
 
 months_inactive= st.select_slider("Months of inactivity in previous year", [0,1,2,3,4,5,6], key="months_inactive")
 
